@@ -1,0 +1,92 @@
+$clr-bg-dark: #0f0e17;
+$clr-bg-light: #232946;
+$clr-bg-input: #3d4770;
+$clr-text: #ffffdd;
+$clr-text-dark1: #a7a9be;
+$clr-text-dark2: #7e7f8f;
+$clr-text-black: #333333;
+$clr-button: #ff8906;
+
+.wrapper {
+  position: relative;
+  display: flex;
+  height: 100vh;
+
+  &__aside {
+    width: 30%;
+    background-color: $clr-bg-dark;
+  }
+
+  &__main {
+    width: 70%;
+    background-color: $clr-bg-light;
+    padding: 4rem 4rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &--messages {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.form {
+  position: relative;
+  &__input {
+    background-color: $clr-bg-input;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    color: $clr-text;
+    border-radius: 0.4rem;
+  }
+
+  button {
+    position: absolute;
+    top: 15%;
+    right: 1%;
+    color: $clr-text-black;
+    font-size: 26px;
+    background-color: $clr-button;
+  }
+}
+
+.message {
+  display: grid;
+  margin: 0.7rem 0;
+  grid-template-columns: 70px 150px 1fr;
+  grid-template-rows: auto;
+
+  p {
+    margin: 0;
+  }
+
+  &__img {
+    grid-row: 1/3;
+    display: block;
+    width: 50px;
+    border-radius: 0.2rem;
+  }
+
+  &__user {
+    color: $clr-text-dark1;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    color: $clr-text;
+    grid-column: 2/4;
+  }
+
+  &__date {
+    color: $clr-text-dark2;
+  }
+}
+
+.top {
+  position: absolute;
+  top: 0;
+  color: $clr-text;
+}
