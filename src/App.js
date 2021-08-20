@@ -6,11 +6,9 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import "./style/main.scss"
 
 function App() {
-  const [currentRoom, setCurrentRoom] = useState("General")
   const [user] = useAuthState(auth)
 
-  // add user.displayName
-  return <>{user ? <ChatRoom currentRoom={currentRoom} /> : <SignIn />}</>
+  return <>{user ? <ChatRoom /> : <SignIn />}</>
 }
 
 export default App

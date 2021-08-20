@@ -1,7 +1,7 @@
 $clr-bg-dark: #0f0e17;
 $clr-bg-light: #232946;
 $clr-bg-input: #3d4770;
-$clr-text: #ffffdd;
+$clr-text: #ffffee;
 $clr-text-dark1: #a7a9be;
 $clr-text-dark2: #7e7f8f;
 $clr-text-black: #333333;
@@ -13,12 +13,56 @@ $clr-button: #ff8906;
   height: 100vh;
 
   &__aside {
-    width: 30%;
+    width: 25%;
     background-color: $clr-bg-dark;
+    padding: 0 1.5rem 2rem;
+    position: relative;
+
+    &--content {
+      height: 100%;
+      padding-top: 3rem;
+      color: $clr-text;
+
+      .account {
+        position: absolute;
+        width: 80%;
+        bottom: 2rem;
+        left: 1.5rem;
+        color: $clr-text;
+
+        img {
+          width: 40px;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .rooms {
+        button {
+          display: block;
+          text-transform: capitalize;
+          color: $clr-text;
+        }
+      }
+
+      .modal__account {
+        position: absolute;
+        bottom: 5rem;
+        right: 1rem;
+        width: 150px;
+        height: 100px;
+        border-radius: 0.5rem;
+        visibility: hidden;
+        background-color: $clr-bg-light;
+
+        &--open {
+          visibility: visible;
+        }
+      }
+    }
   }
 
   &__main {
-    width: 70%;
+    width: 75%;
     background-color: $clr-bg-light;
     padding: 4rem 4rem 2rem 3rem;
     display: flex;
@@ -86,7 +130,58 @@ $clr-button: #ff8906;
 }
 
 .top {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 20px;
   position: absolute;
   top: 0;
   color: $clr-text;
+
+  button {
+    color: $clr-text;
+  }
+}
+
+.current-channel {
+  display: block;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 1rem 0;
+}
+
+.modal__channel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  visibility: hidden;
+
+  .modal-container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $clr-bg-dark;
+
+    h3 {
+      margin: 0;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+
+  &--open {
+    visibility: visible;
+  }
 }
