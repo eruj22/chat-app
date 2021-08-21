@@ -1,7 +1,8 @@
 import { Button } from "@material-ui/core"
 import { useState } from "react"
-import { auth, database } from "../services/firebase"
+import { auth } from "../services/firebase"
 import AccountModal from "./AccountModal"
+import { BiDownArrow } from "react-icons/bi"
 
 function Account() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -14,10 +15,15 @@ function Account() {
   return (
     <>
       <AccountModal isModalOpen={isModalOpen} />
-      <Button onClick={openModal} className="account">
-        <img src={photoURL} alt="" />
-        {displayName}
-      </Button>
+      <div className="account">
+        <Button onClick={openModal}>
+          <img src={photoURL} alt="" />
+          {displayName}
+          <div className="account__icon">
+            <BiDownArrow />
+          </div>
+        </Button>
+      </div>
     </>
   )
 }

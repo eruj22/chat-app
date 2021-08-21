@@ -1,0 +1,156 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  height: 100vh;
+
+  &__aside {
+    width: 25%;
+    background-color: $clr-bg-dark;
+    padding: 0 1.5rem 2rem;
+    position: relative;
+
+    &--content {
+      height: 100%;
+      padding-top: 3rem;
+      color: $clr-text;
+
+      .account {
+        position: absolute;
+        width: 80%;
+        bottom: 2rem;
+        left: 1.5rem;
+
+        button {
+          color: $clr-text;
+          padding-left: 0;
+        }
+
+        img {
+          width: 40px;
+          margin-right: 0.5rem;
+        }
+
+        &__icon {
+          margin-left: 1rem;
+        }
+      }
+
+      .rooms {
+        button {
+          display: block;
+          text-transform: capitalize;
+          text-align: left;
+          padding-left: 0;
+          color: $clr-text;
+        }
+      }
+
+      .modal__account {
+        position: absolute;
+        bottom: 5rem;
+        right: 1rem;
+        width: 250px;
+        padding: 0.5rem 1rem 0;
+        height: 100px;
+        border-radius: 0.5rem;
+        visibility: hidden;
+        background-color: $clr-bg-light;
+
+        button {
+          color: $clr-text;
+        }
+
+        &--open {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &__main {
+    width: 75%;
+    background-color: $clr-bg-light;
+    padding: 4rem 4rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &--messages {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.message {
+  display: grid;
+  margin: 0.7rem 0;
+  grid-template-columns: 70px 150px 1fr;
+  grid-template-rows: auto;
+
+  &--sent {
+    color: $clr-button;
+  }
+
+  &--received {
+    color: $clr-text-dark1;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &__img {
+    grid-row: 1/3;
+    display: block;
+    width: 50px;
+    border-radius: 0.2rem;
+  }
+
+  &__user {
+    text-transform: capitalize;
+  }
+
+  &__text {
+    color: $clr-text;
+    grid-column: 2/4;
+  }
+
+  &__date {
+    color: $clr-text-dark2;
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  color: $clr-text;
+
+  button {
+    color: $clr-text;
+  }
+}
+
+.current-channel {
+  display: block;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 1rem 0;
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    &__aside {
+      display: none;
+    }
+    &__main {
+      width: 100%;
+      padding: 2rem 1.5rem 1rem 1rem;
+    }
+  }
+}

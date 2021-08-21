@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import ChatRoom from "./components/ChatRoom"
 import SignIn from "./components/SignIn"
 import { auth } from "./services/firebase"

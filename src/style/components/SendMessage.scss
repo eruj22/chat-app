@@ -1,0 +1,19 @@
+.form__message {
+  position: relative;
+  &--input {
+    background-color: $clr-bg-input;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
+    border-radius: 0.4rem;
+    color: $clr-text;
+  }
+
+  button {
+    position: absolute;
+    top: 15%;
+    right: 1%;
+    color: $clr-text-black;
+    font-size: 26px;
+    background-color: $clr-button;
+  }
+}

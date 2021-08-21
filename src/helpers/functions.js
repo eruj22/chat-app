@@ -1,4 +1,8 @@
-export const rooms = ["General", "React JS", "JavaScript"]
+export const rooms = [
+  { name: "General", description: "askdma smkdmasp" },
+  { name: "React JS", description: "sakdm " },
+  { name: "JavaScript", description: "sakd" },
+]
 
 export const timeConverter = (UNIX_timestamp) => {
   const date = new Date(UNIX_timestamp * 1000)
