@@ -1,13 +1,22 @@
 .wrapper {
   position: relative;
   display: flex;
-  height: 100vh;
+  height: 95vh;
+
+  button {
+    font-family: "Lora", serif;
+    font-size: 22px;
+  }
 
   &__aside {
     width: 25%;
     background-color: $clr-bg-dark;
     padding: 0 1.5rem 2rem;
     position: relative;
+
+    .top {
+      justify-content: space-between;
+    }
 
     &--content {
       height: 100%;
@@ -31,7 +40,14 @@
         }
 
         &__icon {
+          display: flex;
           margin-left: 1rem;
+          align-items: center;
+
+          &--open {
+            transition: $transition-btn;
+            transform: rotate(180deg);
+          }
         }
       }
 
@@ -49,12 +65,14 @@
         position: absolute;
         bottom: 5rem;
         right: 1rem;
-        width: 250px;
-        padding: 0.5rem 1rem 0;
-        height: 100px;
+        padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         visibility: hidden;
         background-color: $clr-bg-light;
+
+        p {
+          margin-left: 0.5rem;
+        }
 
         button {
           color: $clr-text;
@@ -79,6 +97,7 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 2rem;
+      overflow: auto;
     }
   }
 }
@@ -124,33 +143,106 @@
 
 .top {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   width: 80%;
-  font-size: 20px;
+  font-size: 26px;
   position: absolute;
   top: 0;
   color: $clr-text;
+  z-index: 2;
+  height: 60px;
 
   button {
     color: $clr-text;
+  }
+
+  &__close {
+    display: none;
+  }
+
+  &__hamburger {
+    display: none;
   }
 }
 
 .current-channel {
   display: block;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 24px;
   margin: 1rem 0;
+}
+
+@media (max-width: 1300px) {
+  .wrapper {
+    &__aside {
+      width: 35%;
+    }
+    &__main {
+      width: 65%;
+    }
+  }
 }
 
 @media (max-width: 1000px) {
   .wrapper {
+    display: block;
+    width: 90vw;
+    height: 85vh;
+
     &__aside {
-      display: none;
+      transform: translateX(-150%);
+      position: absolute;
+      height: 100%;
+      z-index: 3;
+      width: 40%;
+      transition: $transition-btn;
+
+      .top {
+        justify-content: start;
+      }
+
+      &-open {
+        transform: translateX(0);
+      }
     }
     &__main {
-      width: 100%;
+      width: 96%;
+      height: 100%;
       padding: 2rem 1.5rem 1rem 1rem;
+    }
+  }
+
+  .top {
+    font-size: 22px;
+
+    &__hamburger {
+      display: block;
+      margin-right: 1rem;
+      font-size: 26px;
+    }
+
+    &__close {
+      position: absolute;
+      display: block;
+      right: -1rem;
+      top: 1rem;
+      font-size: 26px;
+    }
+  }
+
+  .current-channel {
+    font-size: 20;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    &__aside {
+      width: 70%;
+    }
+
+    button {
+      font-size: 18px;
     }
   }
 }

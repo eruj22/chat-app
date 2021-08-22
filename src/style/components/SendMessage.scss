@@ -5,15 +5,27 @@
     width: 100%;
     padding: 0.7rem 0.5rem;
     border-radius: 0.4rem;
+  }
+
+  input {
     color: $clr-text;
+    font-size: 22px;
   }
 
   button {
     position: absolute;
-    top: 15%;
+    top: calc(50% - 19px);
     right: 1%;
     color: $clr-text-black;
     font-size: 26px;
     background-color: $clr-button;
+  }
+}
+
+@media (max-width: 1000px) {
+  .form__message {
+    input {
+      font-size: 18px;
+    }
   }
 }

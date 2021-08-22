@@ -1,6 +1,7 @@
 import React from "react"
 import { auth } from "../services/firebase"
 import { timeConverter } from "../helpers/functions"
+// TODO: fix issue with displaying date when sending new message
 
 function ShowMessages({ messages }) {
   const currentUserName = auth.currentUser.displayName
@@ -9,7 +10,7 @@ function ShowMessages({ messages }) {
     <div className="wrapper__main--messages">
       {messages.map((message, index) => {
         const { photoURL, text, uid, createdAt } = message
-        const messageTime = timeConverter(createdAt.seconds)
+        // const messageTime = timeConverter(createdAt.seconds)
 
         return (
           <div
@@ -20,7 +21,7 @@ function ShowMessages({ messages }) {
           >
             <img className="message__img" src={photoURL} alt="" />
             <p className="message__user">{currentUserName}</p>
-            <small className="message__date">{messageTime}</small>
+            {/* <small className="message__date">{messageTime}</small> */}
             <p className="message__text">{text}</p>
           </div>
         )

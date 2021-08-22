@@ -19,7 +19,13 @@ function Account() {
         <Button onClick={openModal}>
           <img src={photoURL} alt="" />
           {displayName}
-          <div className="account__icon">
+          <div
+            className={
+              isModalOpen
+                ? "account__icon account__icon--open"
+                : "account__icon"
+            }
+          >
             <BiDownArrow />
           </div>
         </Button>

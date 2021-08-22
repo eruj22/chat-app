@@ -1,5 +1,6 @@
 .modal__channel {
   position: fixed;
+  z-index: 6;
   top: 0;
   left: 0;
   width: 100%;
@@ -12,7 +13,7 @@
 
   .modal-container {
     position: relative;
-    width: 50%;
+    width: 70%;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem 3.5rem 2rem 2rem;
@@ -29,8 +30,13 @@
       position: absolute;
       top: 1rem;
       right: 1rem;
-      font-size: 24px;
+      font-size: 26px;
     }
+  }
+
+  button,
+  h3 {
+    color: $clr-text;
   }
 
   &--open {
@@ -42,7 +48,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  // flex-flow: row wrap;
   align-items: center;
   padding-bottom: 2rem;
 
@@ -52,6 +57,8 @@
 
   input,
   textarea {
+    font-family: "Lora", serif;
+    font-size: 20px;
     width: 100%;
     display: block;
     background-color: $clr-bg-light;
@@ -71,12 +78,20 @@
   button {
     position: absolute;
     right: -1rem;
-    bottom: 0;
+    bottom: -0.5rem;
     background-color: $clr-button;
-    transition: $transition-btn;
   }
 
   button:hover {
     background-color: $clr-text-black;
+  }
+}
+
+@media (max-width: 1000px) {
+  .form__channel {
+    input,
+    textarea {
+      font-size: 16px;
+    }
   }
 }
