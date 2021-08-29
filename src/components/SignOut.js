@@ -1,11 +1,18 @@
 import React from "react"
-import { auth } from "../services/firebase"
 import { Button } from "@material-ui/core"
+import firebase from "firebase"
 
 function SignOut() {
+  const signOut = async () => {
+    try {
+      await firebase.auth().signOut()
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
   return (
     <div>
-      <Button onClick={() => auth.signOut()}>Sign Out</Button>
+      <Button onClick={signOut}>Sign Out</Button>
     </div>
   )
 }

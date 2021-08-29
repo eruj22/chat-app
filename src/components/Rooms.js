@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { Button } from "@material-ui/core"
-// import { rooms } from "../helpers/functions"
 import { database } from "../services/firebase"
 
 function Rooms({ setCurrentRoom, submitted }) {

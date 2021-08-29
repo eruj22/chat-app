@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { database } from "../services/firebase"
 import SendMessage from "./SendMessage"
 import Rooms from "./Rooms"
 import { ImPlus } from "react-icons/im"
@@ -9,6 +8,7 @@ import { Button } from "@material-ui/core"
 import Account from "./Account"
 import AddNewChannel from "./AddNewChannel"
 import ShowMessages from "./ShowMessages"
+import firebase from "firebase"
 
 function ChatRoom() {
   const [currentRoom, setCurrentRoom] = useState("General")
@@ -16,6 +16,13 @@ function ChatRoom() {
   const [isChannelModalOpen, setIsChannelModalOpen] = useState(false)
   const [messages, setMessages] = useState([])
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const db = firebase.firestore()
+  const query = db
+    .collection("messages")
+    .where("room", "==", currentRoom)
+    .orderBy("createdAt")
+    .limit(50)
 
   const openChannelModal = () => {
     setIsChannelModalOpen(true)
@@ -34,14 +41,13 @@ function ChatRoom() {
   }
 
   useEffect(() => {
-    database
-      .collection("messages")
-      .where("room", "==", currentRoom)
-      .orderBy("createdAt")
-      .limit(25)
-      .onSnapshot((snapshot) => {
-        setMessages(snapshot.docs.map((doc) => doc.data()))
-      })
+    const unsubscribe = query.onSnapshot((querySnapshot) => {
+      const data = querySnapshot.docs.map((doc) => doc.data())
+      setMessages(data)
+    })
+
+    return unsubscribe
+    // eslint-disable-next-line
   }, [currentRoom])
 
   return (

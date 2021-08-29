@@ -1,12 +1,16 @@
-import React from "react"
 import firebase from "firebase"
-import { auth } from "../services/firebase"
 import { Button } from "@material-ui/core"
 
-function SignIn() {
-  function signInWithGoogle() {
+const SignIn = () => {
+  const signInWithGoogle = async () => {
     const provider = new firebase.auth.GoogleAuthProvider()
-    auth.signInWithPopup(provider)
+    firebase.auth().useDeviceLanguage()
+
+    try {
+      await firebase.auth().signInWithPopup(provider)
+    } catch (error) {
+      console.log(error.message)
+    }
   }
 
   return (
