@@ -1,5 +1,7 @@
 # Chat App
 
+![Posnetek zaslona 2021-08-31 095756](https://user-images.githubusercontent.com/80893722/131466735-2d055a5e-4f0f-4644-aa3b-b1c90f78308a.png)
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
