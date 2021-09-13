@@ -1,4 +1,4 @@
-# CatWiki
+# Chat App
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">

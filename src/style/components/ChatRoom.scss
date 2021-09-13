@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   display: flex;
-  height: 95vh;
+  height: 100vh;
 
   button {
     font-family: "Lora", serif;
@@ -186,8 +186,6 @@
 @media (max-width: 1000px) {
   .wrapper {
     display: block;
-    width: 90vw;
-    height: 85vh;
 
     &__aside {
       transform: translateX(-150%);
@@ -206,8 +204,9 @@
       }
     }
     &__main {
-      width: 96%;
-      height: 100%;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
       padding: 2rem 1.5rem 1rem 1rem;
     }
   }
