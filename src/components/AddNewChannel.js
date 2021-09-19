@@ -33,25 +33,25 @@ function AddNewChannel({
   return (
     <div
       className={
-        isChannelModalOpen
-          ? "modal__channel modal__channel--open"
-          : "modal__channel"
+        isChannelModalOpen ? "modalChannel modalChannel--open" : "modalChannel"
       }
     >
-      <div className="modal-container">
+      <div className="modalChannel__container">
         <Button className="close" onClick={closeChannelModal}>
           <AiOutlineClose />
         </Button>
-        <h3>new channel</h3>
-        <form className="form__channel" onSubmit={handleSubmit}>
-          <div>
+        <h3 className="modalChannel__title">new channel</h3>
+        <form className="formChannel" onSubmit={handleSubmit}>
+          <div className="formChannel__child">
             <input
+              className="formChannel__input"
               placeholder="Channel name"
               onChange={(e) => setChannelName(e.target.value)}
             />
           </div>
-          <div>
+          <div className="formChannel__child">
             <textarea
+              className="formChannel__textarea"
               placeholder="Channel description"
               rows={4}
               onChange={(e) => setChannelDescription(e.target.value)}

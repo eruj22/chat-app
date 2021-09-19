@@ -1,4 +1,4 @@
-.modal__channel {
+.modalChannel {
   position: fixed;
   z-index: 6;
   top: 0;
@@ -11,7 +11,7 @@
   background-color: rgba($color: #000000, $alpha: 0.6);
   visibility: hidden;
 
-  .modal-container {
+  &__container {
     position: relative;
     width: 70%;
     max-width: 800px;
@@ -19,23 +19,23 @@
     padding: 2rem 3.5rem 2rem 2rem;
     border-radius: 0.5rem;
     background-color: $clr-bg-dark;
-
-    h3 {
-      margin: 0;
-      text-transform: uppercase;
-      font-size: 20px;
-    }
-
-    .close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 26px;
-    }
   }
 
-  button,
-  h3 {
+  &__title {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    color: $clr-text;
+  }
+
+  .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 26px;
+  }
+
+  button {
     color: $clr-text;
   }
 
@@ -44,19 +44,19 @@
   }
 }
 
-.form__channel {
+.formChannel {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 2rem;
 
-  & > div {
+  &__child {
     width: 100%;
   }
 
-  input,
-  textarea {
+  &__input,
+  &__textarea {
     font-family: "Lora", serif;
     font-size: 20px;
     width: 100%;
@@ -70,8 +70,8 @@
     resize: none;
   }
 
-  input:focus,
-  textarea:focus {
+  &__input:focus,
+  &__textarea:focus {
     border: 1px solid $clr-text;
   }
 
@@ -88,9 +88,9 @@
 }
 
 @media (max-width: 1000px) {
-  .form__channel {
-    input,
-    textarea {
+  .formChannel {
+    &__input,
+    &__textarea {
       font-size: 16px;
     }
   }

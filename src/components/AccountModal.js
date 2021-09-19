@@ -6,10 +6,10 @@ function AccountModal({ isModalOpen }) {
   return (
     <div
       className={
-        isModalOpen ? "modal__account modal__account--open" : "modal__account"
+        isModalOpen ? "modalAccount modalAccount--open" : "modalAccount"
       }
     >
-      <p>{email}</p>
+      <p className="modalAccount__email">{email}</p>
       <SignOut />
     </div>
   )

@@ -7,98 +7,98 @@
     font-family: "Lora", serif;
     font-size: 22px;
   }
+}
 
-  &__aside {
-    width: 25%;
-    background-color: $clr-bg-dark;
-    padding: 0 1.5rem 2rem;
-    position: relative;
+.main {
+  width: 75%;
+  background-color: $clr-bg-light;
+  padding: 4rem 4rem 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
-    .top {
-      justify-content: space-between;
-    }
-
-    &--content {
-      height: 100%;
-      padding-top: 3rem;
-      color: $clr-text;
-
-      .account {
-        position: absolute;
-        width: 80%;
-        bottom: 2rem;
-        left: 1.5rem;
-
-        button {
-          color: $clr-text;
-          padding-left: 0;
-        }
-
-        img {
-          width: 40px;
-          margin-right: 0.5rem;
-        }
-
-        &__icon {
-          display: flex;
-          margin-left: 1rem;
-          align-items: center;
-
-          &--open {
-            transition: $transition-btn;
-            transform: rotate(180deg);
-          }
-        }
-      }
-
-      .rooms {
-        button {
-          display: block;
-          text-transform: capitalize;
-          text-align: left;
-          padding-left: 0;
-          color: $clr-text;
-        }
-      }
-
-      .modal__account {
-        position: absolute;
-        bottom: 5rem;
-        right: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        visibility: hidden;
-        background-color: $clr-bg-light;
-
-        p {
-          margin-left: 0.5rem;
-        }
-
-        button {
-          color: $clr-text;
-        }
-
-        &--open {
-          visibility: visible;
-        }
-      }
-    }
-  }
-
-  &__main {
-    width: 75%;
-    background-color: $clr-bg-light;
-    padding: 4rem 4rem 2rem 3rem;
+  &__messages {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    margin-bottom: 2rem;
+    overflow: auto;
+  }
+}
 
-    &--messages {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 2rem;
-      overflow: auto;
-    }
+.aside {
+  width: 25%;
+  background-color: $clr-bg-dark;
+  padding: 0 1.5rem 2rem;
+  position: relative;
+
+  .top {
+    justify-content: space-between;
+  }
+
+  &__content {
+    height: 100%;
+    padding-top: 3rem;
+    color: $clr-text;
+  }
+}
+
+.modalAccount {
+  position: absolute;
+  bottom: 5rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  visibility: hidden;
+  background-color: $clr-bg-light;
+
+  &__email {
+    margin-left: 0.5rem;
+  }
+
+  button {
+    color: $clr-text;
+  }
+
+  &--open {
+    visibility: visible;
+  }
+}
+
+.account {
+  position: absolute;
+  width: 80%;
+  bottom: 2rem;
+  left: 1.5rem;
+
+  button {
+    color: $clr-text;
+    padding-left: 0;
+  }
+
+  &__image {
+    width: 40px;
+    margin-right: 0.5rem;
+  }
+
+  &__icon {
+    display: flex;
+    margin-left: 1rem;
+    align-items: center;
+  }
+
+  &--open {
+    transition: $transition-btn;
+    transform: rotate(180deg);
+  }
+}
+
+.rooms {
+  button {
+    display: block;
+    text-transform: capitalize;
+    text-align: left;
+    padding-left: 0;
+    color: $clr-text;
   }
 }
 
@@ -173,42 +173,39 @@
 }
 
 @media (max-width: 1300px) {
-  .wrapper {
-    &__aside {
-      width: 35%;
-    }
-    &__main {
-      width: 65%;
-    }
+  .aside {
+    width: 35%;
+  }
+  .main {
+    width: 65%;
   }
 }
 
 @media (max-width: 1000px) {
   .wrapper {
     display: block;
+  }
+  .aside {
+    transform: translateX(-150%);
+    position: absolute;
+    height: 100%;
+    z-index: 3;
+    width: 40%;
+    transition: $transition-btn;
 
-    &__aside {
-      transform: translateX(-150%);
-      position: absolute;
-      height: 100%;
-      z-index: 3;
-      width: 40%;
-      transition: $transition-btn;
-
-      .top {
-        justify-content: start;
-      }
-
-      &-open {
-        transform: translateX(0);
-      }
+    .top {
+      justify-content: start;
     }
-    &__main {
-      overflow: hidden;
-      width: 100vw;
-      height: 100vh;
-      padding: 2rem 1.5rem 1rem 1rem;
+
+    &--open {
+      transform: translateX(0);
     }
+  }
+  .main {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem 1.5rem 1rem 1rem;
   }
 
   .top {
@@ -236,12 +233,11 @@
 
 @media (max-width: 600px) {
   .wrapper {
-    &__aside {
-      width: 70%;
-    }
-
     button {
       font-size: 18px;
     }
+  }
+  .aside {
+    width: 70%;
   }
 }

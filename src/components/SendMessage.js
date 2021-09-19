@@ -23,9 +23,9 @@ function SendMessage({ currentRoom }) {
   }
 
   return (
-    <form className="form__message" onSubmit={handleSubmit}>
+    <form className="formMessage" onSubmit={handleSubmit}>
       <TextField
-        className="form__message--input"
+        className="formMessage__input"
         id="outlined-basic"
         variant="outlined"
         aria-label="empty textarea"

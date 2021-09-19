@@ -58,13 +58,7 @@ function ChatRoom() {
         setSubmitted={setSubmitted}
         submitted={submitted}
       />
-      <aside
-        className={
-          isMobileMenuOpen
-            ? "wrapper__aside wrapper__aside-open"
-            : "wrapper__aside"
-        }
-      >
+      <aside className={isMobileMenuOpen ? "aside aside--open" : "aside"}>
         <div className="top">
           <p>Channels</p>
           <Button onClick={openChannelModal}>
@@ -72,12 +66,12 @@ function ChatRoom() {
           </Button>
           <AiOutlineClose className="top__close" onClick={closeMobileMenu} />
         </div>
-        <div className="wrapper__aside--content">
+        <div className="aside__content">
           <Rooms setCurrentRoom={setCurrentRoom} submitted={submitted} />
           <Account />
         </div>
       </aside>
-      <main className="wrapper__main">
+      <main className="main">
         <div className="top">
           <GiHamburgerMenu
             className="top__hamburger"

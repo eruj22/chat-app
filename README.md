@@ -67,11 +67,17 @@ npm install npm@latest -g
 1. Clone the repo
 
 ```sh
-git clone https://github.com/eruj22/color-generator
+git clone https://github.com/eruj22/chat-app
 ```
 
 2. Install NPM packages
 
 ```sh
 npm install
+```
+
+3. Run application in localhost
+
+```sh
+npm start
 ```

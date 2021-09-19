@@ -17,13 +17,11 @@ function Account() {
       <AccountModal isModalOpen={isModalOpen} />
       <div className="account">
         <Button onClick={openModal}>
-          <img src={photoURL} alt="" />
+          <img className="account__image" src={photoURL} alt="" />
           {displayName}
           <div
             className={
-              isModalOpen
-                ? "account__icon account__icon--open"
-                : "account__icon"
+              isModalOpen ? "account__icon account--open" : "account__icon"
             }
           >
             <BiDownArrow />

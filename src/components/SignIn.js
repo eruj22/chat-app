@@ -15,7 +15,7 @@ const SignIn = () => {
 
   return (
     <section className="welcome">
-      <h1>Welcome to Chatty,</h1>
+      <h1 className="welcome__title">Welcome to Chatty,</h1>
       <p>the newest chat app</p>
       <Button onClick={signInWithGoogle}>Sign In With Google</Button>
     </section>

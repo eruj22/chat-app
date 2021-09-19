@@ -7,7 +7,7 @@ function ShowMessages({ messages }) {
   const currentUserId = auth.currentUser.uid
 
   return (
-    <div className="wrapper__main--messages">
+    <div className="main__messages">
       {messages.map((message, index) => {
         const { photoURL, text, uid, createdAt } = message
 

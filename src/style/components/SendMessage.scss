@@ -1,6 +1,7 @@
-.form__message {
+.formMessage {
   position: relative;
-  &--input {
+
+  &__input {
     background-color: $clr-bg-input;
     width: 100%;
     padding: 0.7rem 0.5rem;
@@ -23,7 +24,7 @@
 }
 
 @media (max-width: 1000px) {
-  .form__message {
+  .formMessage {
     input {
       font-size: 18px;
     }
